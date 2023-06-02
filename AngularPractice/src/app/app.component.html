@@ -1,0 +1,35 @@
+<div class="jumbotron">
+  <h1 class="display-4">Angular Practice</h1>
+  <p class="lead">All concepts of angular</p>
+
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<div class="container me-auto">
+  <a class="navbar-nav" href="#">Logo</a>
+</div>
+<ul class="navbar-nav ms-auto">
+<li class="nav-item bg-success"><a routerLink="/login">login</a></li>
+<li class="nav-item"><a routerLink="/logout">logout</a></li>
+<li class="nav-item"><a routerLink="/pipe">pipe</a></li>
+</ul>
+</nav>
+
+
+<div>
+  <h1>custom attributes</h1>
+  <h3>Attribute Directive</h3>
+<p [appDemo]="myMessage">Click Here</p>
+
+</div>
+
+
+
+<div>
+  <p>Custom Pipe practice</p>
+  <p>{{firstName | pipeDemo:lastName}}</p>
+</div>
+
+
+
+<router-outlet></router-outlet>

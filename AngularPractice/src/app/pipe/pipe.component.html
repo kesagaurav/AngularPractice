@@ -1,0 +1,48 @@
+
+<h1>Pipe Inbuilt Methods Practice</h1>
+
+<p>name : {{ name | uppercase }}</p>
+<p>name : {{ name | lowercase }}</p>
+<div>
+  <p>this is all about the date format</p>
+  <p>date : {{ date | date:'fullDate'}}</p>
+<p>date : {{ date | date:'medium'}}</p>
+<p>date : {{ date | date:'long'}}</p>
+<p>date : {{ date | date:'short'}}</p>
+<p>full time with date : {{ date | date:'MM/dd/yyyy hh:mm:ss'}}</p>
+
+</div>
+<div>
+  <p>this all about the time format</p>
+  <p>date : {{ date | date:'mediumTime'}}</p>
+<p>date : {{ date | date:'longTime'}}</p>
+<p>date : {{ date | date:'shortTime'}}</p>
+<p>date : {{ date | date:'fullTime'}}</p>
+
+</div>
+<p>json objects in pipe is {{json|json}}</p>
+
+
+<div>
+  <h1>percentage of pipes</h1>
+  {{ 0.1 | percent }} will display 10%
+{{ 0.1 | percent:'2.2-3' }} will display 10.00%
+
+</div>
+
+
+<div>
+  <h1>numbers</h1>
+  <p>{{23 | number}}</p>
+  <p>{{ 25000  | number:'.2.5'}}</p>
+</div>
+
+
+<div>
+  <h1>slice of pipes</h1>
+  <p>{{name | slice:2:4}}</p>
+  <p>{{name | slice:1:3}}</p>
+  <p>{{name | slice:3:6}}</p>
+  <p>{{name | slice:-3}}</p>
+  <p>{{name | slice:-1:-3}}</p>
+</div>

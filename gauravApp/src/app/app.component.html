@@ -1,0 +1,86 @@
+<!--<div *ngIf="!submitted">
+  <form>
+    <label>User Name</label>
+    <input type="text" #username><br/><br/>
+    <label for="password">Password</label>
+    <input type="password" name="password" #password><br/>
+  </form>
+  <button (click)="onSubmit(username.value,password.value)">Login</button>
+</div>
+
+<div *ngIf="submitted">
+  <div *ngIf="isAuthenticated">
+    <h4> Welcome {{userName}} </h4>
+  </div>
+  <div *ngIf="!isAuthenticated">
+    <h4> Invalid Login !!! Please try again...</h4>
+  </div>
+  <button type="button" (click)="submitted=false">Back</button>
+</div>-->
+
+<div>
+  <h1 *ngFor="let course of courses let i=index">
+    <p> {{i}}-{{course.name}}</p>
+  </h1>
+<h4>
+  <h3>current choice is {{choice}}</h3>
+</h4>
+  
+</div>
+<div [ngSwitch]="choice">
+  <p *ngSwitchCase="1">First Choice</p>
+  <p *ngSwitchCase="2">Second Choice</p>
+  <p *ngSwitchCase="3">Third Choice</p>
+  <p *ngSwitchCase="2">Second Choice Again</p>
+  <p *ngSwitchDefault>Default Choice</p>
+</div>
+
+<div>
+  <button (click)="nextChoice()">nextchoice</button>
+  </div>
+
+  <h3>Structural Directive</h3>
+<p *appRepeat="5">I am being repeated...</p>
+
+<p [style.background-color]="colorName" [style.color]="color">fixed colrNamen and color</p>
+
+<input type="text" [(ngModel)]="name">
+<p>hi {{name}}</p>
+  <!--pipes-->
+  {{ name1 | uppercase }} <!--uppercase--> <br/>
+  {{ name1 | lowercase }} <!--lowercase--> <br/>
+  {{ name1 | titlecase }}  <!--titlecase--> <br/>
+  {{ 250000 | currency }}
+ {{ 25000 | currency:'CAD' }} 
+  {{ 25000 | currency:'CAD':'code' }} 
+  {{ 25000 | currency:'CAD':'symbol':'6.2-3'}} 
+  {{ 25000 | currency:'CAD': 'symbol-narrow':'1.3'}} 
+  {{ 250000 | currency:'CAD':'symbol':'6.3'}} 
+  {{ 250000 | currency:'CAD':'symbol':'6.3':'fr'}} 
+
+
+  {{ ['a','b','c','d']| slice:2}} will display c,d
+{{ ['a','b','c','d']| slice:1:3}} will display b,c
+{{ 'Laptop Charger'| slice:3:6}} will display top
+{{ 'Laptop Charger'| slice:-4}} will display rger
+{{ 'Laptop Charger'| slice:-4:-2}} will display rg
+<br/>
+{{ title1 | titlecase }}<br/>
+<h2>Product Name</h2>
+{{  productName | titlecase }}
+
+<br/>
+<h3>product price</h3>
+{{  productPrice | currency:'INR'}}
+<h3>Purchase date</h3>
+{{ purchaseDate | date:'fullDate' | lowercase }}
+
+<h4>product tax</h4>
+{{ productTax | percent:'.2'}}
+
+<h5>product rating</h5>
+{{ productRating | number:'1.3-5'}}
+
+
+
+  

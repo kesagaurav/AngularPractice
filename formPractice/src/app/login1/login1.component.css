@@ -1,0 +1,9 @@
+.form-control{
+  columns: col-xs-3;
+}
+
+
+.bordered {
+	border: 1px dashed black;
+	background-color: #eee;
+}

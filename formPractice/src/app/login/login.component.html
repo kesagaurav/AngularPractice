@@ -1,0 +1,55 @@
+<div class="jumbotron">
+  <h1 class="display-4">Form Practice Using Reactive Forms</h1>
+  <p class="lead">Reactive Forms</p>
+  <hr class="my-4">
+  <p>Practice of Reactive Forms</p>
+</div>
+
+<div class="container">
+  <form [formGroup]="registerform">
+    <div class="form-group col-5">
+      <label for="firstName">FirstName</label>
+      <input class="form-control" type="text" formControlName="firstName">
+      <div>
+      <p class="alert alert-danger" *ngIf="registerform.controls['firstName'].errors">FirstName is Invalid</p><br/><br/>
+      <p class="alert alert-danger" *ngIf="registerform.controls['firstName'].errors?.['required']">firstname required</p><br/><br/>
+    </div>
+      <div></div>
+    </div>
+    <div class="form-group col-5">
+      <label for="firstName">LastName</label>
+      <input class="form-control" type="text" formControlName="lastName">
+
+      <span class="alert alert-danger" *ngIf="registerform.controls['lastName'].errors?.['required']">lastname required</span>
+      <div></div>
+    </div>
+    <div class="form-group col-5">
+      <label for="phone">phone</label>
+      <input class="form-control" type="text" formControlName="phone">
+      <div>
+        <span class="alert alert-danger" *ngIf="registerform.controls['phone'].errors">phone is not valid</span><br/><br/>
+      <span class="alert alert-danger" *ngIf="registerform.controls['phone'].errors?.['required']">phone required</span><br/><br/>
+      <p class="alert alert-dark" *ngIf="registerform.controls['phone'].errors?.['phoneisInvalid']">{{registerform.controls['phone'].errors?.['phoneisInvalid'].message}}</p>
+    </div>
+      <div></div>
+    </div>
+    <div class="form-group col-5">
+      <label for="email">email</label>
+      <input class="form-control" type="text" formControlName="email">
+
+      <span class="alert alert-danger" *ngIf="registerform.controls['email'].errors?.['required']">email required</span>
+      <div></div>
+    </div>
+    <div class="form-group col-5">
+      <label for="password">password</label>
+      <input class="form-control" type="text" formControlName="password">
+      <div>
+      <span class="alert alert-danger" *ngIf="registerform.controls['password'].errors?.['required']">password should be min lenght of 7</span>
+      <p class="alert alert-dark" *ngIf="registerform.controls['password'].errors?.['passwordisInvalid']">{{registerform.controls['password'].errors?.['passwordisInvalid'].message}}</p>
+
+    </div>
+
+    </div>
+  </form>
+
+</div>

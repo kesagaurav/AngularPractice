@@ -1,0 +1,15 @@
+<div class="container">
+  <form class="form-group col-3" [formGroup]="registerForm">
+    <div>
+    <label for="firstName"><strong>FirstName</strong></label>
+
+    <input id="firstName" class="form-control input-sm" type="text" formControlName="firstName">
+    <p [ngStyle]="{width: fontcolumn,color:color,borderBottom:border,b:inputtext}">ok</p>
+    <p class="alert alert-danger" *ngIf="registerForm.controls['firstName'].errors?.['dirty'] || registerForm.controls['firstName'].errors?.['pristine'] || registerForm.controls['firstName'].errors?.['touched'] && registerForm.controls['firstName'].errors">feild is required</p>
+  </div>
+  </form>
+</div>
+<div [ngClass]="{bordered: isBordered}">
+  bordered {{isBordered ? 'ON':'OFF'}};
+
+</div>

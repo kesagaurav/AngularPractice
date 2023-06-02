@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<h1>{{title}}</h1>
+ <app-registartion-form></app-registartion-form>
+<!-- <b> Using Observables!</b>
+<h6 style="margin-bottom: 0">VALUES:</h6>
+<div *ngFor="let value of myArray">{{ value }}</div>
+<div style="margin-bottom: 0">ERRORS: {{ errors }}</div>
+<div style="margin-bottom: 0">FINISHED: {{ finished }}</div>
+<button style="margin-top: 2rem" (click)="fetchData()">Fetch Data</button> -->
+<!-- <app-login></app-login> -->
+<!-- <app-pipe-demo></app-pipe-demo>
+<h2>Sorting Products list using custom pipe</h2>
+Sort the list based on
+<select [(ngModel)]="sortoption">
+  <option value="prodName">Product Name</option>
+  <option value="price">Price</option></select><br /><br />
+<table border="1">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let products of productsList | sort: sortoption">
+      <td>{{ products.productName }}</td>
+      <td>{{ products.price }}</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <div *ngIf="onlyOdd"><li
+          class="list-group-item"
+          [ngClass]="{odd:odd%2!=0}"
+          [ngStyle]="{backgroundColor: odd%2!=0 ? 'yellow':'transparent' }"
+          *ngFor="let odd of oddnumbers">
+          {{odd}}
+        </li></div>
+        <!-- <ng-template [ngIf]="onlyOdd">
+          <div><li
+            class="list-group-item"
+            [ngClass]="{odd:odd%2!=0}"
+            [ngStyle]="{backgroundColor: odd%2!=0 ? 'yellow':'transparent' }"
+            *ngFor="let odd of oddnumbers">
+            {{odd}}
+          </li></div>
+        </ng-template>  this is the background process what *ng will do genrally-->
+        <div *appUnless="onlyOdd"><li
+          class="list-group-item"
+          [ngClass]="{odd:even%2!==0}"
+          [ngStyle]="{backgroundColor: even%2!==0 ? 'yellow':'green' }"
+
+          *ngFor="let even of evennumbers">
+          {{even}}
+        </li></div>
+
+      </ul>
+      <!-- <ng-template [ngIf]="onlyOdd">
+        <p>Only odd</p>
+      </ng-template> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<app-login1></app-login1>
+<!--
+<p appCustom>basic custom directives!</p> -->
+<!-- <p appPerfect [defaultColor]="'red'" [highLighColor]="'yellow'">perfect custom directives!</p> -->
+<h3>Custom Attributes</h3>
+<p [appCustom]="message">click here</p>
+
+
+<app-home></app-home>
